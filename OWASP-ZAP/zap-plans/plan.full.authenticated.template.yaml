@@ -21,8 +21,7 @@ env:
       sessionManagement:
         method: "headers"
         parameters:
-          - header: "Authorization"
-            value: "Bearer {%header:authentication.token%}"
+          Authorization: "Bearer {%header:authentication.token%}"
       users:
         - name: "admin"
           credentials:
