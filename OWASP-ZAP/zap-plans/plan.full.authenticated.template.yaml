@@ -32,6 +32,11 @@ env:
     failOnWarning: false
 
 jobs:
+  - type: openApi
+    parameters:
+      apiUrl: "${TARGET_URL}api-docs"
+      context: "juice-shop"
+
   - type: spider
     parameters:
       context: "juice-shop"
@@ -43,6 +48,7 @@ jobs:
       context: "juice-shop"
       user: "admin"
       maxDuration: 15
+      browserId: "firefox-headless"
 
   - type: passiveScan-wait
     parameters:
