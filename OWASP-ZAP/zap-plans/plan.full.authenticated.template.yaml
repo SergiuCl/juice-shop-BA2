@@ -32,14 +32,10 @@ env:
     failOnWarning: false
 
 jobs:
-  - type: addOns
-    parameters:
-      install:
-        - openapi
-
   - type: openapi
     parameters:
-      apiUrl: "${TARGET_URL}api-docs"
+      apiFile: "/zap/wrk/swagger.yml"
+      targetUrl: "${TARGET_URL}"
       context: "juice-shop"
 
   - type: spider
