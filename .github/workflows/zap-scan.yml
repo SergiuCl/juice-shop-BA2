@@ -11,6 +11,7 @@ on:
         options:
           - baseline
           - full
+          - full.authenticated
 
 jobs:
   zap-dast:
