@@ -32,7 +32,12 @@ env:
     failOnWarning: false
 
 jobs:
-  - type: openApi
+  - type: addOns
+    parameters:
+      install:
+        - openapi
+
+  - type: openapi
     parameters:
       apiUrl: "${TARGET_URL}api-docs"
       context: "juice-shop"
