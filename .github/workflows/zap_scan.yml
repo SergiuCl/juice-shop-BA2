@@ -20,3 +20,14 @@ jobs:
           target: 'https://preview.owasp-juice.shop'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a -j'
+          allow_issue_writing: false
+
+      - name: Upload ZAP reports
+        uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: zap-baseline-reports
+          path: |
+            report_html.html
+            report_json.json
+            report_md.md
